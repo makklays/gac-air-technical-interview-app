@@ -1,0 +1,58 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Usuarios - Stockify{% endblock %}
+
+{% block content %}
+
+    <div class="wrapper">
+
+        {% include 'parts/menu.html.twig' %}
+
+        <div class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
+                            <div>
+                                <h4 class="mb-3">Usuarios</h4>
+                            </div>
+                            <a href="{{ path('user_add') }}" class="btn btn-primary add-list">
+                                <i class="las la-plus mr-3"></i>Nuevo usuario
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="table-responsive mb-3">
+
+                            {% if users|length > 0 %}
+                                <table class="table mb-0 tbl-server-info no-footer" role="grid">
+                                    <thead class="bg-white text-uppercase">
+                                    <tr class="ligth ligth-data" role="row">
+                                        <!--th class="text-center">#</th-->
+                                        <th class="text-left">Username</th>
+                                        <!--th class="text-center">Password</th-->
+                                        <th class="text-center">Active</th>
+                                        <th class="text-center">CreatedAt</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for user in users %}
+                                            <tr>
+                                                <!--td class="text-center">{{ user.id }}</td-->
+                                                <td><a href="{{ path('user_show', {'id':user.id}) }}">{{ user.username }}</a></td>
+                                                <!--td class="text-center">{{ user.password }}</span></td-->
+                                                <td class="text-center">{{ user.active }}</td>
+                                                <td class="text-center">{{ user.createdAt.format("j F Y") }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

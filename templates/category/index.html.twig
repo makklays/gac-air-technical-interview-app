@@ -1,0 +1,61 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Categories - Stockify{% endblock %}
+
+{% block content %}
+
+    <div class="wrapper">
+
+        {% include 'parts/menu.html.twig' %}
+
+        <div class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
+                            <div>
+                                <h4 class="mb-3">Categorías</h4>
+                            </div>
+                            <a href="{{ path('category_add') }}" class="btn btn-primary add-list">
+                                <i class="las la-plus mr-3"></i>Nueva categoría
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="table-responsive mb-3">
+
+                            {% if categories|length > 0 %}
+
+                                <table class="table mb-0 tbl-server-info no-footer" role="grid">
+                                    <thead class="bg-white text-uppercase">
+                                        <tr class="ligth ligth-data" role="row">
+                                            <th class="text-left">Nombre</th>
+                                            <th class="text-center">Tiene Productos</th>
+                                            <th class="text-center">CreatedAt</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for category in categories %}
+                                            <tr>
+                                                <td><a href="{{ path('category_show', {'id':category.id}) }}">{{ category.name }}</a></td>
+                                                <td class="text-center">{{ category.products.count() }}</td>
+                                                <td class="text-center">{{ category.createdAt.format("j F Y") }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+
+                            {% else %}
+
+                                <i>No hay categories</i>
+
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

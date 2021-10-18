@@ -1,0 +1,47 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Añade categoría - Stockify{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+
+        {% include 'parts/menu.html.twig' %}
+
+        <div class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
+                            <div>
+                                <h4 class="mb-3">Categoría</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+
+                        <table class="table">
+                            <tr>
+                                <th class="text-right" style="width:200px;">ID:</th>
+                                <td>{{ category.id }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-right">Nombre:</th>
+                                <td>{{ category.name }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-right">Tiene productos:</th>
+                                <td>{{ category.products.count() }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-right">Created At:</th>
+                                <td>{{ category.createdAt.format("j F Y") }}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

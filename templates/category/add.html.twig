@@ -1,0 +1,47 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Añade categoría - Stockify{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+
+    {% include 'parts/menu.html.twig' %}
+
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
+                        <div>
+                            <h4 class="mb-3">Nueva categoría</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+
+                    {{ form(form) }}
+
+                    <!--
+                    <form action="{{ path('category_add') }}" method="post">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Nombre <sup style="color:red;">*</sup></label>
+                                    <input name="name" type="text" class="form-control">
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-5 text-left">
+                                <button type="submit" class="btn btn-primary mr-2">Añadir categoría</button>
+                            </div>
+                        </div>
+                    </form>
+                    -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

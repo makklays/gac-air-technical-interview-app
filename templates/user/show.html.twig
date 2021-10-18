@@ -1,0 +1,47 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Añade ususario - Stockify{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+
+        {% include 'parts/menu.html.twig' %}
+
+        <div class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
+                            <div>
+                                <h4 class="mb-3">Usuario</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+
+                        <table class="table">
+                            <tr>
+                                <th class="text-right" style="width:200px;">ID:</th>
+                                <td>{{ user.id }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-right">Nombre:</th>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-right">Role:</th>
+                                <td>ROLE_ADMIN</td>
+                            </tr>
+                            <tr>
+                                <th class="text-right">Created At:</th>
+                                <td>{{ user.createdAt.format("j F Y") }}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
