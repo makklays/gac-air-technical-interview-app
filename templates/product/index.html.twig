@@ -34,6 +34,7 @@
                                         <th class="text-center">Categoría</th>
                                         <th class="text-center">Stock</th>
                                         <th class="text-center">CreatedAt</th>
+                                        <th class="text-center">Actiones</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -44,6 +45,7 @@
                                             <td class="text-center"><a href="{{ path('category_show', {'id':product.category.id}) }}">{{ product.category.name }}</a></td>
                                             <td class="text-center">{{ product.stock }}</td>
                                             <td class="text-center">{{ product.createdAt.format("j F Y") }}</td>
+                                            <td class="text-center"><a href="{{ path('product_edit', {'id':product.id}) }}"><i class="las la-edit mr-3"></i>editar</a></td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>

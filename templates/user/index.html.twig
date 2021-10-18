@@ -33,6 +33,7 @@
                                         <!--th class="text-center">Password</th-->
                                         <th class="text-center">Active</th>
                                         <th class="text-center">CreatedAt</th>
+                                        <th class="text-center">Actiones</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -43,6 +44,7 @@
                                                 <!--td class="text-center">{{ user.password }}</span></td-->
                                                 <td class="text-center">{{ user.active }}</td>
                                                 <td class="text-center">{{ user.createdAt.format("j F Y") }}</td>
+                                                <td class="text-center"><a href="{{ path('user_edit', {'id':user.id}) }}"><i class="las la-edit mr-3"></i>editar</a></td>
                                             </tr>
                                         {% endfor %}
                                     </tbody>
