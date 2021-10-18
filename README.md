@@ -1,3 +1,4 @@
+![screen_page_category](https://github.com/makklays/gac-air-technical-interview-app/blob/main/public/images/screen_category.png)
 # Descripción de la prueba técnica
 Desarrollar una aplicación que gestione el stock de una serie de productos. La aplicación permitirá:
 - Listar, crear y modificar usuarios.
